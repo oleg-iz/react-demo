@@ -1,0 +1,33 @@
+@use "includes" as i;
+
+.demo-button {
+  $button: &;
+
+  @include i.font-wlh(14px, 28px, 600, i.$color-black);
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  font-family: inherit;
+  border: 1px solid i.$color-primary;
+  border-radius: i.$border-radius;
+  padding: 5px 24px 5px 24px;
+  box-shadow: 0px 5px 15px rgba(i.$color-primary, 0.3);
+  transition: all 0.2s linear;
+  min-width: 110px;
+  background-color: i.$color-button-gray;
+
+  &:hover {
+    box-shadow: 0px 5px 15px rgba(i.$color-primary, 0.6);
+  }
+
+  &--submit {
+    background-color: i.$color-secondary;
+  }
+
+  &--align-end {
+    align-self: flex-end;
+  }
+}

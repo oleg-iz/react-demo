@@ -1,0 +1,15 @@
+@use "includes" as i;
+
+.demo-page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-left: 50px;
+  margin-right: 50px;
+
+  &__title {
+    @include i.font(20px, 600, i.$color-black);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}

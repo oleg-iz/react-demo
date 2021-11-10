@@ -1,0 +1,84 @@
+@use "includes" as i;
+
+.demo-table {
+  $table: &;
+
+  table-layout: auto;
+  width: 100%;
+  text-align: left;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  &__head {
+    > tr {
+      > th {
+        @include i.font-wlh(16px, 22px, 500, i.$color-black);
+        background-color: i.$color-table-head;
+        position: relative;
+        padding: 0.5em 1em 0.5em 1em;
+        border-left: 1px solid i.$color-black;
+        border-top: 1px solid i.$color-black;
+
+        &:first-child {
+          border-top-left-radius: i.$border-radius;
+        }
+
+        &:last-child {
+          border-top-right-radius: i.$border-radius;
+          border-right: 1px solid i.$color-black;
+        }
+      }
+    }
+  }
+
+  &__cell {
+    &--centered {
+      text-align: center;
+    }
+  }
+
+  &__body {
+    > tr {
+      > td {
+        @include i.font-wlh(14px, 20px, 400, i.$color-black);
+        position: relative;
+        padding: 0.5em 1em 0.5em 1em;
+        overflow-wrap: break-word;
+        transition: background 0.3s;
+        border-left: 1px solid i.$color-black;
+
+        &:last-child {
+          border-right: 1px solid i.$color-black;
+        }
+      }
+
+      &:nth-child(even) {
+        background-color: i.$color-table-cell;
+      }
+
+      &:last-child {
+        > td {
+          border-bottom: 1px solid i.$color-black;
+
+          &:first-child {
+            border-bottom-left-radius: i.$border-radius;
+          }
+
+          &:last-child {
+            border-bottom-right-radius: i.$border-radius;
+          }
+        }
+      }
+
+      &:hover > td {
+        background: i.$color-table-hover;
+      }
+    }
+  }
+
+  &__wrapper {
+    margin-top: 32px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}

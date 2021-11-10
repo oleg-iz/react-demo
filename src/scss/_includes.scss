@@ -1,0 +1,23 @@
+$border-radius: 8px;
+
+$color-black: #000000;
+$color-button-gray: #e5e5e5;
+$color-error: #e90909;
+$color-placeholder: #808080;
+$color-primary: #19967d;
+$color-secondary: #99d2f2;
+$color-white: #ffffff;
+$color-table-head: #c8c8c8;
+$color-table-cell: #ebebeb;
+$color-table-hover: #dddddd;
+
+@mixin font($size, $weight, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin font-wlh($size, $line-height, $weight, $color) {
+  @include font($size, $weight, $color);
+  line-height: $line-height;
+}
